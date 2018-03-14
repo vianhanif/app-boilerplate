@@ -5,8 +5,6 @@ import './assets/scss/index.scss'
 import Home from './pages/Home'
 import store from './store'
 import registerServiceWorker from './registerServiceWorker'
-import * as firebase from 'firebase'
-import config from './config'
 
 ReactDOM.render(
   <Provider store={store}>
@@ -15,5 +13,3 @@ ReactDOM.render(
   document.getElementById('root')
 )
 registerServiceWorker()
-
-firebase.initializeApp(config.FIREBASE_CONFIG)
