@@ -6,15 +6,21 @@ import Home from './pages/Home'
 import store, { history } from './store'
 import { Route } from 'react-router'
 import { ConnectedRouter } from 'react-router-redux'
-// import registerServiceWorker from './registerServiceWorker'
+import registerServiceWorker from './registerServiceWorker'
 
 const rootElement = document.getElementById('root')
-[rootElement.hasChildNodes() ? 'hydrate' : 'render'](
-  <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <Route exact path="/" component={Home}></Route>
-    </ConnectedRouter>
-  </Provider>,
-  rootElement
-)
-// registerServiceWorker()
+const App = () => {
+  return (
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        <Route exact path="/" component={Home}></Route>
+      </ConnectedRouter>
+    </Provider>
+  )
+}
+if (rootElement.hasChildNodes()) {
+  hydrate(<App />, rootElement);
+} else {
+  render(<App />, rootElement);
+}
+registerServiceWorker()
