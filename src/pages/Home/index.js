@@ -1,23 +1,13 @@
+import { connect } from 'react-redux'
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux'
-import appAction from '../../store/app/actions'
-import * as appTypes from '../../store/app/types'
+import { mapDispatch } from './dispatch'
 import { Helmet } from 'react-helmet'
 import './style.scss'
 
 export default connect(
-  state => ({...state}),
-  commit => ({
-    loadData () {
-      appAction[appTypes.LOAD_DATA] (commit, {
-        data: {
-          id: 0
-        },
-        callback () {}
-      })
-    }
-  })
+  state => ({ ...state }),
+  dispatch => ({ ...mapDispatch(dispatch) })
 )(class Home extends Component {
 
   static propTypes = {
