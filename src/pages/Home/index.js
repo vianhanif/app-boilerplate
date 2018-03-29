@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux'
 import appAction from '../../store/app/actions'
 import * as appTypes from '../../store/app/types'
+import { Helmet } from 'react-helmet'
 import './style.scss'
 
 export default connect(
@@ -34,6 +35,9 @@ export default connect(
   render() {
     return (
       <div className="page">
+        <Helmet>
+          <title> Home Page</title>
+        </Helmet>
         <div className="section menu">{JSON.stringify(this.props.app.value)}</div>
         <div className="section header"></div>
         <div className="section content"></div>
