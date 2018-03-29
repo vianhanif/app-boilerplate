@@ -10,7 +10,9 @@ export default connect(
   commit => ({
     loadData () {
       appAction[appTypes.LOAD_DATA] (commit, {
-        data: {},
+        data: {
+          id: 0
+        },
         callback () {}
       })
     }
@@ -32,7 +34,7 @@ export default connect(
   render() {
     return (
       <div className="page">
-        <div className="section menu"></div>
+        <div className="section menu">{JSON.stringify(this.props.app.value)}</div>
         <div className="section header"></div>
         <div className="section content"></div>
         <div className="section sign-up"></div>
