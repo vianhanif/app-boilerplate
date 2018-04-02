@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { mapDispatch } from './dispatch'
 import { Helmet } from 'react-helmet'
 import '../../assets/styling/css/pages/Home/index.css'
