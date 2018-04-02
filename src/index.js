@@ -1,7 +1,7 @@
 import React from 'react'
 import { hydrate, render } from 'react-dom'
 import { Provider } from 'react-redux'
-import './assets/scss/index.scss'
+import './assets/styling/css/index.css'
 import Home from './pages/Home'
 import store, { history } from './store'
 import { Route } from 'react-router'

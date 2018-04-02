@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { mapDispatch } from './dispatch'
 import { Helmet } from 'react-helmet'
-import './style.scss'
+import '../../assets/styling/css/pages/Home/index.css'
 
 export default connect(
   state => ({ ...state }),
