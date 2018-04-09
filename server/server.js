@@ -10,7 +10,7 @@ import universalLoader from './universal';
 
 // Create our express app (using the port optionally specified)
 const app = express();
-const PORT = process.env.PORT || 3000;
+export const PORT = process.env.PORT || 3000;
 
 // Compress, parse, and log
 app.use(compression());
@@ -20,7 +20,10 @@ app.use(morgan('dev'));
 
 // Set up route handling, include static assets and an optional API
 app.use('/', index);
-app.use(express.static(path.resolve(__dirname, '../build')));
+app.use(express.static(
+  path.resolve(__dirname, '../build'),
+  { maxAge: '1d'}
+));
 app.use('/api', api);
 app.use('/', universalLoader);
 

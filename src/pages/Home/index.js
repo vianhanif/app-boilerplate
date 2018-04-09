@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux'
 import { loadData } from '../../modules/app/actions'
-import { Helmet } from 'react-helmet'
 import '../../assets/styling/css/pages/Home/index.css'
 
 export default connect(
@@ -29,9 +28,6 @@ export default connect(
   render() {
     return (
       <div className="page" id="home">
-        <Helmet>
-          <title> Home Page</title>
-        </Helmet>
         <div className="section menu">{JSON.stringify(this.props.app.value)}</div>
         <div className="section header">
           <Link to="/about">Go to About Page</Link>
