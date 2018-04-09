@@ -19,7 +19,7 @@ const noLogger = [
   routerMiddleware(history)
 ]
 
-const middleware = process.env.NODE_ENV === 'test' ? noLogger : withLogger
+const middleware = process.env.NODE_ENV === 'development' ? withLogger : noLogger
 
 const store = createStore(
   rootReducer,

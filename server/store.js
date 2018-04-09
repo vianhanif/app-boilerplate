@@ -12,7 +12,18 @@ const createServerStore = (path = '/') => {
   const history = createHistory({ initialEntries: [path] });
 
   // All the middlewares
-  const middleware = [thunk, routerMiddleware(history), logger];
+  const withLogger = [
+    thunk,
+    routerMiddleware(history),
+    logger
+  ];
+
+  const noLogger = [
+    thunk,
+    routerMiddleware(history)
+  ]
+
+  const middleware = process.env.NODE_ENV === 'development' ? withLogger : noLogger
 
   // Store it all
   const store = createStore(
