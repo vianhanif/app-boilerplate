@@ -2,6 +2,6 @@ import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 
 export default combineReducers({
-  app: require('./app').default,
+  app: require('./App').default,
   router: routerReducer
 });

@@ -8,15 +8,22 @@ import rootReducer from './modules';
 
 export const history = createHistory();
 
-const middleware = [
+const withLogger = [
   thunk,
   routerMiddleware(history),
   logger
 ];
 
+const noLogger = [
+  thunk,
+  routerMiddleware(history)
+]
+
+const middleware = process.env.NODE_ENV === 'test' ? noLogger : withLogger
+
 const store = createStore(
   rootReducer,
-  (process.env.NODE_ENV === 'development' ? 
+  (process.env.NODE_ENV === 'development' ?
   composeWithDevTools(applyMiddleware(...middleware)) :
   applyMiddleware(...middleware))
 );

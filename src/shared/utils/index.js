@@ -1,1 +1,5 @@
-export default {}
+import MockProvider from './MockProvider'
+
+export {
+  MockProvider
+}
