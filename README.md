@@ -13,9 +13,6 @@
 - React Router v4
 - React Router Redux (5.0.0-alpha.6)
 
-## Contribute
-Do what you normally do - fork and PR.
-
 ## Run Ap
 
 ```
