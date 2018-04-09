@@ -15,3 +15,12 @@
 
 ## Contribute
 Do what you normally do - fork and PR.
+
+## Run Ap
+
+```
+npm install
+npm run start-ssr # run app with SSR
+npm start # run app without SSR
+npm test
+```
