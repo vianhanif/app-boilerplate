@@ -1,0 +1,54 @@
+/*
+  namespaces for media queries on any component
+*/
+#about .section {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+#about .menu {
+  background-color: #EAEDF0;
+  height: 80px; }
+
+#about .header {
+  background-color: #B2D6FF; }
+
+#about .content {
+  background-color: #5995DA;
+  height: 500px; }
+
+#about .sign-up {
+  background-color: #D6E9FE;
+  height: 60px; }
+
+#about .feature-1 {
+  background-color: #F5CF8E; }
+
+#about .feature-2 {
+  background-color: #F09A9D; }
+
+#about .feature-3 {
+  background-color: #C8C6FA; }
+
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+  #about .feature-1,
+  #about .feature-2,
+  #about .feature-3 {
+    width: 50%; } }
+
+@media only screen and (min-width: 961px) {
+  #about .page {
+    width: 960px;
+    margin: 0 auto; }
+  #about .feature-1,
+  #about .feature-2,
+  #about .feature-3 {
+    width: 33.3%; }
+  #about .header {
+    height: 400px; }
+  #about .sign-up {
+    order: 1; }
+  #about .content {
+    order: 2; } }

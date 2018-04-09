@@ -10,7 +10,7 @@ import { ConnectedRouter } from 'react-router-redux';
 import { Route } from 'react-router-dom';
 import createServerStore from './store';
 
-import App from '../src/containers/app';
+import Pages from '../src/pages';
 
 // A simple helper function to prepare the HTML markup
 const prepHTML = (data, { html, head, body }) => {
@@ -36,11 +36,11 @@ const universalLoader = (req, res) => {
     // Create a store and sense of history based on the current path
     const { store, history } = createServerStore(req.path);
 
-    // Render App in React
+    // Render Pages in React
     const routeMarkup = renderToString(
       <Provider store={store}>
         <ConnectedRouter history={history}>
-          <Route component={App} />
+          <Route component={Pages} />
         </ConnectedRouter>
       </Provider>
     );

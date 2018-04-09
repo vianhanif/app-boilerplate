@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "homepage": "https://cra-ssr.herokuapp.com/",
   "private": false,
+  "babel": {
+    "plugins": [
+      "transform-class-properties"
+    ]
+  },
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.0",
@@ -17,14 +22,24 @@
     "react-router-redux": "^5.0.0-alpha.6",
     "react-scripts": "1.0.14",
     "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "build-css": "node-sass-chokidar src/assets/styling/scss -o src/assets/styling/css --recursive",
+    "watch-css": "npm run build-css && node-sass-chokidar src/assets/styling/scss -o src/assets/styling/css --watch --recursive",
+    "start": "concurrently 'react-scripts start' 'npm run watch-css'",
+    "start-ssr": "npm run build-css && npm run build && npm run serve",
+    "deploy-ssr": "npm run build-css && npm run build && npm run deploy",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "serve": "NODE_ENV=development node server/index.js",
     "deploy": "NODE_ENV=production node server/index.js"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "concurrently": "^3.5.1",
+    "node-sass-chokidar": "^1.2.2"
   }
 }
