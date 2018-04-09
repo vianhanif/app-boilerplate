@@ -11,16 +11,23 @@ const createServerStore = (path = '/') => {
   // We don't have a DOM, so let's create some fake history and push the current path
   const history = createHistory({ initialEntries: [path] });
 
+  const customLogger = (store) => (next) => (action) => {
+    // console.log('logged action', action)
+    next(action)
+  }
+
   // All the middlewares
   const withLogger = [
     thunk,
     routerMiddleware(history),
-    logger
+    logger,
+    customLogger
   ];
 
   const noLogger = [
     thunk,
-    routerMiddleware(history)
+    routerMiddleware(history),
+    customLogger
   ]
 
   const middleware = process.env.NODE_ENV === 'development' ? withLogger : noLogger
