@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux'
-import { loadData } from '../../modules/App/actions'
+import { loadData } from '../../modules/app/actions'
 import '../../assets/styling/css/pages/Home/index.css'
 
 export default connect(
