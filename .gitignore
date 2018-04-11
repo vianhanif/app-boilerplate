@@ -10,6 +10,7 @@
 /build
 
 # misc
+/app
 .DS_Store
 .env
 webpack-assets.json
