@@ -11,6 +11,7 @@
 
 # misc
 /app
+/dist
 .DS_Store
 .env
 webpack-assets.json
