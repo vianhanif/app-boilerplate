@@ -45,7 +45,7 @@
     "react-snap": "^1.12.2",
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
-    "style-loader": "^0.20.3",
+    "style-loader": "^0.21.0",
     "sw-precache-webpack-plugin": "^0.11.5",
     "url-loader": "^1.0.1",
     "webpack": "^3.5.5",
